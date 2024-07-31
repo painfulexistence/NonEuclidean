@@ -49,8 +49,8 @@ Texture::Texture(const char* fname, int rows, int cols) {
     glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_GENERATE_MIPMAP, GL_TRUE);
-    glGenerateMipmap(GL_TEXTURE_2D);
     glTexImage3D(GL_TEXTURE_2D_ARRAY, 0, GL_RGB8, width/rows, height/cols, rows*cols, 0, GL_BGR, GL_UNSIGNED_BYTE, img);
+    glGenerateMipmap(GL_TEXTURE_2D_ARRAY);
   } else {
     glBindTexture(GL_TEXTURE_2D, texId);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
